@@ -1,0 +1,119 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeInRegister 0.6s ease-in-out;
+}
+
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  animation: zoomInRegister 0.6s ease;
+}
+
+.register-container {
+  width: 380px;
+  padding: 45px;
+  background: #1a1a1a;
+  color: #00ffe1;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 255, 225, 0.3);
+  animation: slideUpRegister 0.5s ease-in-out;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #00ffe1;
+  text-transform: uppercase;
+}
+
+.input-group {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #00ffe1;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #00ffe1;
+  border-radius: 6px;
+  background: #111;
+  color: #00ffe1;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #00ccaa;
+  outline: none;
+  background: #1e1e1e;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(45deg, #00ffe1, #00b8d4);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 255, 225, 0.5);
+}
+
+button:hover {
+  background: linear-gradient(45deg, #00b8d4, #00ffe1);
+  transform: scale(1.05);
+}
+
+.login-text {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #00ffe1;
+}
+
+.login-text a {
+  color: #00ffe1;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.login-text a:hover {
+  color: #00ccaa;
+  text-decoration: underline;
+}
+
+@keyframes fadeInRegister {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUpRegister {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomInRegister {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

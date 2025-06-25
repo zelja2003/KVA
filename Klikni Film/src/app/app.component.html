@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<div class="app">
+  <header>
+    <nav>
+      <div class="nav-left">
+        <ul>
+          <li><a routerLink="/">Pocetna</a></li>
+          <li><a routerLink="/filmovi">Filmovi</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-right">
+        <ul>
+          <li><a routerLink="/about">O Nama</a></li>
+        </ul>
+
+        <ul class="login-nav">
+          <li *ngIf="!isLoggedIn">
+            <a routerLink="/login">Prijava</a>
+          </li>
+          <li *ngIf="isLoggedIn">
+            <a routerLink="/profile"><i class="fa-solid fa-user"></i> {{ username }}</a>
+          </li>
+          <li *ngIf="isLoggedIn">
+            <a href="#" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i> Odjava</a>
+          </li>
+          
+          <li class="cart-nav" (click)="toggleCart()">
+            <a >
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span *ngIf="korpa.length > 0">({{ korpa.length }})</span>
+            </a>
+          </li>
+        </ul>
+        
+      </div>
+    </nav>
+  </header>
+
+  <div class="banner">
+    <marquee scrollamount="7"><i class="fa-solid fa-film"></i> Dobrodošli u Klikni Film - Gledajte najbolje filmove kod nas! <i class="fa-solid fa-film"></i></marquee>
+  </div>
+
+  <main>
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
+
+  </main>
+<div class="cart-modal" *ngIf="cartOpen">
+  <div class="cart-content">
+    <h2><i class="fa-solid fa-cart-shopping"></i> Vaša korpa</h2>
+    <ul>
+      <li *ngFor="let rezervacija of korpa">
+        <i class="fa-solid fa-ticket"></i> <strong>{{ rezervacija.film.title }}</strong> - 
+        {{ rezervacija.brojKarata }} karata, 
+        {{ rezervacija.datum }}
+        <button (click)="ukloniIzKorpe(rezervacija)"><i class="fa-solid fa-xmark"></i></button>
+      </li>
+    </ul>
+    <button class="confirm-button" (click)="potvrdiSveRezervacije()"><i class="fa-solid fa-check"></i> Potvrdi sve</button>
+  </div> 
+</div>  
+
+
+  <footer>
+    <a href="{{ footerUrl }}">{{ footerLink }}</a>
+  </footer>
+</div>

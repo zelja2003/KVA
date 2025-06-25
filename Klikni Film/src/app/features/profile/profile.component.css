@@ -1,0 +1,129 @@
+body {
+  background-color: #111;
+  font-family: Arial, sans-serif;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  color: #00ffe1;
+  animation: fadeProfile 0.6s ease-in-out;
+}
+
+.naloginfo {
+  text-align: left;
+}
+
+.account-info {
+  width: 30%;
+  padding: 20px;
+  border-right: 3px solid #00ffe1;
+  background: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 255, 225, 0.2);
+  animation: slideLeftProfile 0.6s ease-out;
+}
+
+.account-info input {
+  display: block;
+  width: 80%;
+  padding: 10px;
+  text-align: center;
+  margin: 10px auto;
+  border: 2px solid #00ffe1;
+  background: #000;
+  color: #00ffe1;
+  border-radius: 6px;
+  transition: 0.3s ease-in-out;
+}
+
+.account-info input:focus {
+  background: #111;
+  border-color: #00c2b8;
+  outline: none;
+}
+
+.save-button {
+  width: 85%;
+  padding: 12px;
+  background: linear-gradient(45deg, #00ffe1, #00c2b8);
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0, 255, 225, 0.4);
+}
+
+.save-button:hover {
+  background: linear-gradient(45deg, #00c2b8, #00ffe1);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 255, 225, 0.6);
+}
+
+.save-button:active {
+  transform: scale(0.95);
+}
+
+.brisirez {
+  padding: 8px;
+  width: 50%;
+  font-size: 12px;
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.brisirez:hover {
+  background: darkred;
+  transform: scale(1.05);
+}
+
+.reservations {
+  width: 65%;
+  text-align: center;
+  animation: slideRightProfile 0.6s ease-out;
+}
+
+.table-container {
+  padding: 10px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 255, 225, 0.15);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #00ffe1;
+}
+
+th, td {
+  border: 1px solid #00ffe1;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+@keyframes fadeProfile {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideLeftProfile {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRightProfile {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}

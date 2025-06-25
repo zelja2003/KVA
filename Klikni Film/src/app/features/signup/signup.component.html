@@ -1,0 +1,29 @@
+
+<div class="register-wrapper">
+  <div class="register-container">
+    <h2>Registracija</h2>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div class="input-group">
+        <label for="username">Korisničko ime</label>
+        <input id="username" type="text" formControlName="name" placeholder="Unesite korisničko ime" required>
+      </div>
+
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" placeholder="Unesite email" required>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Lozinka</label>
+        <input id="password" type="password" formControlName="password" placeholder="Unesite lozinku" required>
+      </div>
+
+      <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+      <button type="submit">Registruj se</button>
+
+      <p class="login-text">Već imate nalog? <a href="/login">Prijavite se</a></p>
+    </form>
+  </div>
+</div>

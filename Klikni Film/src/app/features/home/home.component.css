@@ -1,0 +1,133 @@
+.home-container {
+  text-align: center;
+  padding: 30px 15px;
+  color: #e0e0e0;
+  background-color: #1a1a1a;
+}
+
+.home-container h1 {
+  color: #00ffe1;
+  margin-top: -10px;
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px rgba(0, 255, 225, 0.6);
+}
+
+.trivia-section {
+  background: #2a2a2a;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 30px auto;
+  max-width: 650px;
+  box-shadow: 0 0 20px rgba(0, 255, 225, 0.3);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.trivia-section h2 {
+  color: #00ffe1;
+  margin-bottom: 15px;
+}
+
+.trivia-section ul {
+  list-style: none;
+  padding: 0;
+  color: #ffffff;
+  font-size: 17px;
+}
+
+.trivia-section li {
+  padding: 10px 0;
+  border-bottom: 1px solid #00ffe1;
+}
+
+.trivia-section li:last-child {
+  border-bottom: none;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  max-width: 85%;
+  margin: 0 auto 40px auto;
+}
+
+.slide {
+  background: #222;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 225, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.slide img {
+  width: 230px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+.slide:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 25px rgba(0, 255, 225, 0.4);
+}
+
+.home-text {
+  max-width: 800px;
+  margin: 40px auto 20px auto;
+  color: #00ffe1;
+  font-size: 18px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.home-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 24px;
+  background: linear-gradient(45deg, #00ffe1, #00c2b8);
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 5px 12px rgba(0, 255, 225, 0.4);
+}
+
+.home-button:hover {
+  background: linear-gradient(45deg, #00c2b8, #00ffe1);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .slider {
+    justify-content: center;
+  }
+
+  .slide {
+    min-width: 250px;
+    max-width: 250px;
+    height: auto;
+  }
+
+  .home-button {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+
+  .home-text {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+}
+
+/* Animacije */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
